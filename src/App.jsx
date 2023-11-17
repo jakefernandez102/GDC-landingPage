@@ -1,6 +1,15 @@
+import { useState } from "react";
+import Chat from "./components/chat";
+import ChatButton from "./components/ChatButton";
+
+
 
 
 function App() {
+
+  const [showChat, setShowChat] = useState(false);
+
+
 
   return (
     <>
@@ -26,20 +35,31 @@ function App() {
           <div className='w-3/4 flex flex-col justify-center items-center '>
             <h3 className='font-bold text-3xl mt-14 mb-10'>Subscribete</h3>
             <p>Inscríbase para ser el primero en enterarse de nuestros eventos de lanzamiento.</p>
-            <form className='flex flex-col md:w-full md:flex gap-3'>
-              <div className='w-full flex flex-col'>
+            <form className='flex flex-col w-full gap-3 md:flex-row'>
+              <div className='w-full flex flex-col '>
                 <label htmlFor="">Email</label>
                 <input type="text" className='border-b-2 border-b-slate-300' />
               </div>
               <input type="submit" className='bg-purple-cus text-white text-xl font-bold tracking-widest px-4 py-2' value='Registrarme' />
             </form>
           </div>
-          <footer className='p-10'>
-            <p className='text-slate-400'>
-              COPYRIGHT © {new Date().getFullYear()} GYREDEVCLUB.COM - TODOS LOS DERECHOS RESERVADOS
-            </p>
-          </footer>
       </main>
+      {
+        showChat ? 
+        <Chat 
+          setShowChat={setShowChat}
+        /> :
+        <ChatButton 
+          setShowChat={setShowChat}
+          showChat={showChat}
+        />
+      }
+      
+      <footer className='p-10 flex justify-center'>
+        <p className='text-slate-400'>
+          COPYRIGHT © {new Date().getFullYear()} GYREDEVCLUB.COM - TODOS LOS DERECHOS RESERVADOS
+        </p>
+      </footer>
     </>
   )
 }
