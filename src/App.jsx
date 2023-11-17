@@ -19,7 +19,7 @@ function App() {
           </div>
           <div className='p-4 col-span-2 flex flex-col gap-3 justify-center items-center bg-purple-cus h-full'>
             <h3 className='text-center text-white text-xl uppercase tracking-wider font-boldAZX'>Bienvenido</h3>
-            <p className='w-2/3 text-center text-white font-extrabold text-sm md:text-xl'>Nuestro lanzamiento es inminente y tomará lugar muy pronto.</p>
+            <p className='w-2/3 text-center text-white font-extrabold text-sm lg:text-xl'>Nuestro lanzamiento es inminente y tomará lugar muy pronto.</p>
           </div>
         </section>
 
